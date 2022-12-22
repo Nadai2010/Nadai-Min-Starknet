@@ -30,3 +30,4 @@ Min-ens es una implementación simple de un servicio de espacio de nombres en El
 
 También hay disponible un archivo de prueba básico [aquí](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/tests/test_ens.cairo) para ayudarlo a aprender los conceptos básicos de la escritura de pruebas en Cairo con Protostar.
 
+* [NADAI GUIA ENS](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_ens/README.md)
