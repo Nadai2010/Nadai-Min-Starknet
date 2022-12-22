@@ -40,7 +40,7 @@ Una de las cosas básicas que aprendemos a hacer al comenzar con el desarrollo d
 
 El objetivo de este proyecto es construir e implementar un contrato de token ERC20 simple.
 
-Para mejorar en la redacción de pruebas, puede intentar comprender y replicar la prueba de contrato ERC20 cairo [aquí] (https://github.com/Darlington02/min-starknet/blob/master/tests/test_erc20.cairo).
+Para mejorar en la redacción de pruebas, puede intentar comprender y replicar la prueba de contrato ERC20 cairo [aquí](https://github.com/Darlington02/min-starknet/blob/master/tests/test_erc20.cairo).
 
 * [NADAI GUIA ERC20](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_erc20/README.md)
 
