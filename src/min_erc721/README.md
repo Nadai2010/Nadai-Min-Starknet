@@ -39,7 +39,7 @@ Ahora nos quedaremos con el class hash del `Erc721` para hacer el `deploy`. En e
 protostar -p testnet declare ./build/erc721.json --max-fee auto
 ```
 
-![Graph](/src/min_erc721/imágenes/declare.png)
+![Graph](/src/min_erc721/Im%C3%A1genes/declare.png)
 
 * [Hash Declare Erc721](https://testnet.starkscan.co/tx/0x01cf0197fd8669d8dc16ba6a1c5169929a1bf78931b07f40b8927369f7e7c1a5)
 
@@ -53,7 +53,7 @@ Usaremos por comodidad para el `Min-Starknet` el contrato Universal para los dep
 336641417577, 5128521, 1795950254530259382270168937734171348535331377400385313842303804539016002736
 ```
 
-![Graph](/src/min_erc721/im%C3%A1genes/deploy.png)
+![Graph](/src/min_erc721/Im%C3%A1genes/deploy.png)
 
 
 * [Hash Deploy](https://testnet.starkscan.co/tx/0x42f20c06498763b10877ef6935b20f16cb202e810b2fc8c3aaf4d4504059fa4)
@@ -62,9 +62,9 @@ Usaremos por comodidad para el `Min-Starknet` el contrato Universal para los dep
 Podemos revisar como se nos ha deployado con el datos pasados correctamente y como hemos agregado nuestro nuevo NFT `NAI`, pero aún no hemos `Mint` ninguno. Recordar que muchas funciones en los contratos necesitan aprovar primero, en este caso para el `Mint` no hace falta. Una vez verificado la transacción podremos leer el contato y comprobar que se ha creado nuestro `NFT`, asi que vamos a ello. 
 
 
-![Graph](/src/min_erc721/im%C3%A1genes/mint.png)
+![Graph]((/src/min_erc721/Im%C3%A1genes/mint.png))
 
-![Graph](/src/min_erc20/im%C3%A1genes/read.png)
+![Graph]((/src/min_erc721/Im%C3%A1genes/read.png))
 
 
 * [Hash Mint NFT ID1](https://testnet.starkscan.co/tx/0x27491087f60f7ce3de18805b5eda54ef8efbb6b4a505e676273711b22faa801)
@@ -81,29 +81,6 @@ Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para 
 starkscan
 ```
 
-![Graph](/src/min_erc721/im%C3%A1genes/lib.png)
+![Graph](/src/min_erc721/Im%C3%A1genes/lib.png)
 
 ---
-
-
-
-
-
-----
-
-
-
-* [Hash Declare]()
-
-336641417577, 5128521, 1795950254530259382270168937734171348535331377400385313842303804539016002736
-
-* [Hash Deploy ERC721](https://testnet.starkscan.co/tx/0x42f20c06498763b10877ef6935b20f16cb202e810b2fc8c3aaf4d4504059fa4)
-* [Contract ERC721](https://testnet.starkscan.co/contract/0x03b084d2d248b3e9c248e8851f5f3d6b2964919e4b958b88ee2c524ca5a436c0)
-
-Hash min (https://testnet.starkscan.co/tx/0x27491087f60f7ce3de18805b5eda54ef8efbb6b4a505e676273711b22faa801)
-
-
-
-Aqui tendremos un ERC721 sencillo que podremos mintear, 
-
-
