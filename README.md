@@ -45,3 +45,14 @@ Para mejorar en la redacción de pruebas, puede intentar comprender y replicar l
 * [NADAI GUIA ERC20](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_erc20/README.md)
 
 ---
+
+## MIN-ERC721
+Min-erc721 implementa el estándar de token ERC721 (tokens no fungibles) en El Cairo utilizando [la biblioteca de Openzeppelin](https://github.com/OpenZeppelin/cairo-contracts/blob/main/src/openzeppelin/token/erc721/library.cairo).
+
+El objetivo es construir e implementar un contrato ERC721 simple en Starknet.
+
+También hay un archivo de prueba disponible [aquí](https://github.com/Darlington02/min-starknet/blob/master/tests/test_erc721.cairo)
+
+* [NADAI GUIA ERC721](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_erc721/README.md)
+
+---

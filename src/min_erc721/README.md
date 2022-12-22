@@ -62,9 +62,9 @@ Usaremos por comodidad para el `Min-Starknet` el contrato Universal para los dep
 Podemos revisar como se nos ha deployado con el datos pasados correctamente y como hemos agregado nuestro nuevo NFT `NAI`, pero aún no hemos `Mint` ninguno. Recordar que muchas funciones en los contratos necesitan aprovar primero, en este caso para el `Mint` no hace falta. Una vez verificado la transacción podremos leer el contato y comprobar que se ha creado nuestro `NFT`, asi que vamos a ello. 
 
 
-![Graph]((/src/min_erc721/Im%C3%A1genes/mint.png))
+![Graph](/src/min_erc721/Im%C3%A1genes/mint.png))
 
-![Graph]((/src/min_erc721/Im%C3%A1genes/read.png))
+![Graph](/src/min_erc721/Im%C3%A1genes/read.png))
 
 
 * [Hash Mint NFT ID1](https://testnet.starkscan.co/tx/0x27491087f60f7ce3de18805b5eda54ef8efbb6b4a505e676273711b22faa801)
