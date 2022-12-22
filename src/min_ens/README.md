@@ -22,7 +22,7 @@ export PROTOSTAR_ACCOUNT_PRIVATE_KEY=0x1234
 
 ## Compile y Declare ENS
 
-SAhora para compilar `Ens` y el resto de contratos sólo deberemos pasar el siguiente comando y obtendremos también cada uno de sus `Class Hash`.
+Ahora para compilar `Ens` y el resto de contratos sólo deberemos pasar el siguiente comando y obtendremos también cada uno de sus `Class Hash`.
 
 
 ```bash
