@@ -9,8 +9,16 @@ Tenga en cuenta que Protostar actualmente tiene soporte solo para Linux y MacOS,
 
 Una vez que haya instalado Protostar, siga adelante para clonar el repositorio ejecutando el siguiente comando en una terminal:
 
+* Original Darlington02
+
 ```bash
 git clone git@github.com:Darlington02/min-starknet.git
+```
+
+* Nadai con Guía
+
+```bash
+gh repo clone Nadai2010/Nadai-Min-Starknet
 ```
 
 **PD: asegúrese de seguir el repositorio, en el orden especificado a continuación para obtener la máxima eficiencia, y siempre lea los comentarios del código para comprender de manera efectiva los códigos subyacentes, Y podría ser útil tener en cuenta también que goerli2 fue la red más utilizada durante el desarrollo**
