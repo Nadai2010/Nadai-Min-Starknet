@@ -75,6 +75,6 @@ Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para 
 starkscan
 ```
 
-![Graph](/src/min_erc20/imagenes/lib.png)
+![Graph](/src/min_erc20/im%C3%A1genes/lib.png)
 
 ---
