@@ -20,7 +20,7 @@ export PROTOSTAR_ACCOUNT_PRIVATE_KEY=0x1234
 
 ---
 
-## Compile y Declare ENS
+## Compile y Declare ERC20
 
 Ahora para compilar nuesrto token `ERC20.cairo` y el resto de contratos sólo deberemos pasar el siguiente comando y obtendremos también cada uno de sus `Class Hash`.
 
@@ -45,7 +45,7 @@ protostar -p testnet declare ./build/erc20.json --max-fee auto
 
 ---
 
-## Deploy de ENS con UDC
+## Deploy de ERC20 con UDC
 
 Usaremos por comodidad para el `Min-Starknet` el contrato Universal para los deploy [UDC](https://testnet.starkscan.co/contract/0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf#write-contract). En este caso pasaremos 6 argumentos añadir en `calldata_len = 6` [Name, Symbol, Decimals, **initialSupply**, Recipient]. El `initialSupply` deberá pasarse en uint256 por lo que podemos usar la herramienta [stark-util](https://www.stark-utils.xyz/converter) o directamente en este ejemplo para `100 = 100, 0`, por ello se pasan 6 argumentos. En mi caso os dejo la conversión completa de mis argumentos para el `deploy`.
 
@@ -69,7 +69,7 @@ Podemos revisar como se nos ha deployado con el datos pasados correctamente y co
 
 ### Verificación Starkscan
 
-Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `ens.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
+Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `Erc20.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
 
 ```bash
 starkscan
