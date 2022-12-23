@@ -1,0 +1,22 @@
+protostar -p testnet declare ./build/ico.json --max-fee auto
+
+hash declare
+https://testnet.starkscan.co/tx/0x07c000c82c9fe16eb9d51aed204c4dd7d45e55ef07fd86abc0f35733a3df698b
+
+class hash
+https://goerli.voyager.online/class/0x0097186804ddd5fd8475c5ca8cfc0785a2edf1cde27596e8f67277cf3d0a2750
+
+hash deploy ico
+https://goerli.voyager.online/tx/0x043ffd91ede28c8b56d5cc7c288c862368a08b6ce1829ee94323397c38fc638a
+
+https://goerli.voyager.online/tx/0x0037cf18beb16ed3f94678077b6536c0a89cfac704f0fe4cea58f191582a07b5
+
+contract ico
+https://goerli.voyager.online/contract/0x0385d00cacb68d17f985fe6e2b13a07941956725e1ceea798456f5cf46853037
+
+https://goerli.voyager.online/contract/0x07c59e8d7703585ad0e84d5a2deb67a71b0c1d314caf63b95c1273d3743dae89
+
+
+
+
+protostar -p testnet deploy 0x0097186804ddd5fd8475c5ca8cfc0785a2edf1cde27596e8f67277cf3d0a2750 --max-fee auto -i 10237315701995897433515559283228717467815530440128879644699240141503539899 1795950254530259382270168937734171348535331377400385313842303804539016002736

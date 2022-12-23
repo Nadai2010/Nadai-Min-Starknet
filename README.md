@@ -56,3 +56,16 @@ También hay un archivo de prueba disponible [aquí](https://github.com/Darlingt
 * [NADAI GUIA ERC721](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_erc721/README.md)
 
 ---
+
+## MIN-NFT-MARKETPLACE
+Min-nft-marketplace es una implementación mínima de un NFT Marketplace para comprar y vender tokens NFT.
+
+Implementa dos funciones externas, `list_token(token_contract_address, token_id, price)` para enumerar tokens en el mercado y `buy_token(listing_id)` para comprar tokens en el mercado.
+
+Los eventos `listing_created` y `listing_sold` también se emiten cada vez que se enumera o vende un token.
+
+**Nota: Recuerde llamar a setApprovalForAll(marketplace_contract_address, true) en el contrato para el NFT que está enumerando antes de llamar a la función `list_token`**
+
+Próximamente archivo de prueba..
+
+---
