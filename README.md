@@ -69,3 +69,8 @@ Los eventos `listing_created` y `listing_sold` también se emiten cada vez que s
 Próximamente archivo de prueba..
 
 ---
+
+## MIN-AMM
+Min-amm es una implementación mínima de un creador de mercado automatizado en El Cairo. Los códigos fuente se obtuvieron y se modificaron mínimamente de los [Cairo docs](https://www.cairo-lang.org/docs/hello_starknet/amm.html), por lo que puede consultarlos en caso de que se confunda.
+
+También se creó un archivo de prueba [aquí](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/tests/test_amm.cairo).

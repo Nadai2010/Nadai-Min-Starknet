@@ -35,7 +35,7 @@ Si queremos realizar el deploy de nuestro contrato en la testnet 2, debemos segu
 
 ---
 
-## Compile y Declare ERC721
+## Compile y Declare NFT Market
 
 Ahora para compilar nuesrto token `Nft_market.cairo` y el resto de contratos sólo deberemos pasar el siguiente comando y obtendremos también cada uno de sus `Class Hash`.
 
@@ -60,7 +60,7 @@ protostar -p testnet declare ./build/nft_market.json --max-fee auto
 
 ---
 
-## Deploy de Nft Marketplace con UDC
+## Deploy de Nft Marketplace con Protostar
 
 Usaremos esta vez para el `Min-Starknet` protostar, ya que no debemos pasar argumentos así directamente podremos hacer el `deploy` usando el siguiente comando.
 
