@@ -69,7 +69,7 @@ Usaremos esta vez para el `Min-Starknet` protostar, ya que no debemos pasar argu
 protostar -p testnet deploy 0x0250ded8ce7f9f9345281754e6aa688282cf185a78ba4d60f2f441d25b054811 --max-fee auto
 ```
 
-![Graph](/src/min_nft_marketplace/im%C3%A1genes/deploy.png
+![Graph](/src/min_nft_marketplace/im%C3%A1genes/deploy.png)
 
 
 * [Hash Deploy](https://testnet.starkscan.co/tx/0x04ed7094a58f0e59feaaa1c0183aeb11b14414576a65bb21191ccdc6a70a0cd9)
