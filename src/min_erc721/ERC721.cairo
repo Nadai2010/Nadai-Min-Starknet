@@ -4,9 +4,9 @@ from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.uint256 import Uint256
 from starkware.starknet.common.syscalls import get_caller_address
 
-from cairo_contracts.src.openzeppelin.token.erc721.library import ERC721
-from cairo_contracts.src.openzeppelin.introspection.erc165.library import ERC165
-from cairo_contracts.src.openzeppelin.access.ownable.library import Ownable
+from lib.cairo_contracts.src.openzeppelin.token.erc721.library import ERC721
+from lib.cairo_contracts.src.openzeppelin.introspection.erc165.library import ERC165
+from lib.cairo_contracts.src.openzeppelin.access.ownable.library import Ownable
 
 // 
 // STORAGE VARIABLES
