@@ -61,7 +61,7 @@ protostar -p testnet declare ./build/staking.json --max-fee auto
 
 ## Deploy de STAKING con Protostar
 
-Usaremos esta vez para el `Min-Starknet` protostar. En este constructor en particular, tenemos que pasar dos parámetros: `tokenAddress` y `adminAddress`. Para tokenAddress usaremos [NAI](https://testnet.starkscan.co/contract/0x0005cb4b24c874d2a7378a21286f3e70a9a4447567bf8f9b8de71b8a75f32abb#overview) y de admin la wallet usada para esta guía. Estos se guardan en el almacenamiento del contrato (usando la función write) en las variables token_address y admin_address respectivamente. Así que pasaremos para el `deploy` el siguiente comando.
+Usaremos esta vez para el `Min-Starknet` protostar. En este constructor en particular, tenemos que pasar dos parámetros: `tokenAddress` y `adminAddress`. Para tokenAddress usaremos [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract) y de admin la wallet usada para esta guía. Estos se guardan en el almacenamiento del contrato (usando la función write) en las variables `token_address` y `admin_address` respectivamente. Así que pasaremos para el `deploy` el siguiente comando.
 
 ```bash
 protostar -p testnet deploy 0x04464eba7601763a9edc8d497d9fe48c2aeefd77bba9598fb13d9507ff12407b --max-fee auto -i 2087021424722619777119509474943472645767659996348769578120564519014510906823 1795950254530259382270168937734171348535331377400385313842303804539016002736
@@ -77,13 +77,13 @@ protostar -p testnet deploy 0x04464eba7601763a9edc8d497d9fe48c2aeefd77bba9598fb1
 
 ### Función Approve y Stake
 
-Para aprobar el token en este contrato, necesitarás utilizar la función `approve` del contrato ERC-20 que representa el token. En este caso usaremos [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract). La función `approve` permite que el contrato especificado pueda transferir tokens desde tu cuenta. En este caso será el contrato de [STAKING](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521). La cantidad que pasaremos será `100000000000`.
+Para aprobar el token en este contrato, necesitarás utilizar la función `approve` del contrato ERC-20 que representa el token. En este caso usamos [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract). La función `approve` permite que el contrato especificado pueda transferir tokens desde tu cuenta. En este caso será el contrato de [STAKING](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521). La cantidad que pasaremos será `100000000000`.
 
-![Graph](/src/min_nft_marketplace/im%C3%A1genes/approve.png)
+![Graph](/src/min_staking/im%C3%A1genes/approve.png)
 
 * [Hash Approve ETH](https://testnet.starkscan.co/tx/0x7b991a3d01a75a5f2dc4186ac19ae658064fd4ce4d100672b53e9fc319b7e31)
 
-Una vez esté procesada la transacción iremos hacer el  [Stake](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521#write-contract) de `ETH` y tiene dos parámetros de entrada: `stake_amount` y `duration_in_secs`-
+Una vez esté procesada la transacción iremos hacer el  [Stake](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521#write-contract) de `ETH` y tiene dos parámetros de entrada: `stake_amount` y `duration_in_secs`.
 
 La función comienza por asignar algunas variables locales y luego obtiene la dirección del llamante y la dirección del contrato actual utilizando las funciones `get_caller_address` y `get_contract_address`, respectivamente. También obtiene la dirección del token y el valor actual del contador de stakes utilizando las funciones `read` y las variables `token_address` y `stake_counter`, respectivamente.
 
@@ -95,7 +95,8 @@ Luego, la función asigna un nuevo valor al contador de stakes y calcula la hora
 
 ![Graph](/src/min_staking/im%C3%A1genes/infor.png)
 
-stake infromation
+
+---
 
 ### Función Claim Reward
 
@@ -114,7 +115,7 @@ Una vez que se han calculado las recompensas, se pueden transferir los tokens a 
 ![Graph](/src/min_staking/im%C3%A1genes/infor1.png)
 
 
-Como podremos comprobar en la lista de llamadas de nuestro contrato [aquí](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521#account-calls)
+Como podremos comprobar ha cambiado nuestra lista el `claim_status` a `1`, podremos revisar en la lista de llamadas de nuestro contrato [aquí](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521#account-calls) los `stake` y `claim` que se han realizado.
 
 ![Graph](/src/min_staking/im%C3%A1genes/list.png
 
