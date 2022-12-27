@@ -117,7 +117,7 @@ Una vez que se han calculado las recompensas, se pueden transferir los tokens a 
 
 Como podremos comprobar ha cambiado nuestra lista el `claim_status` a `1`, podremos revisar en la lista de llamadas de nuestro contrato [aquí](https://testnet.starkscan.co/contract/0x010313bd5969cf62a539f0794e6dbdcce802647a4eb40c5176d713a901d45521#account-calls) los `stake` y `claim` que se han realizado.
 
-![Graph](/src/min_staking/im%C3%A1genes/list.png
+![Graph](/src/min_staking/im%C3%A1genes/list.png)
 
 ---
 
