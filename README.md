@@ -91,3 +91,16 @@ PD: Todos los usuarios que participan en la ICO pagan la misma cantidad por el r
 * [NADAI GUIA ICO](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_ico/README.md)
 
 ---
+
+## MIN-STAKING
+Min-stake es una implementación mínima de un contrato de staking en El Cairo.
+
+El staking es un proceso popular de bloquear una cierta cantidad de sus tenencias criptográficas para obtener recompensas o ganar intereses.
+
+El proceso de pensamiento para esta aplicación requiere que un usuario primero deposite una cierta cantidad del token ERC20 para apostar llamando a la función `stake (stake_amount, duration_in_secs)`, y finalmente reclame los tokens + el interés acumulado una vez que la duración haya terminado por llamando a la función `claim_rewards(stake_id)`.
+
+**Nota: Recuerde llamar a aprobar(stake_contract_address, stake_amount) en el contrato StarkNet ETH antes de llamar a la función `stake`**
+
+* [NADAI GUIA STAKE](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_staking/README.md)
+
+---
