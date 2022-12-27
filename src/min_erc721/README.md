@@ -88,7 +88,7 @@ Como ven, solo ha hecho falta en nuestro contrato deployado llamar a `mint` y pa
 
 ---
 
-### Verificación Starkscan
+## Verificación Starkscan
 
 Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `Erc721.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
 

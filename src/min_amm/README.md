@@ -98,7 +98,7 @@ La función [add_demo_token](/src/min_amm/amm.cairo#L84) se utiliza para agregar
 
 ---
 
-## Función Set Pool Token Balance
+### Función Set Pool Token Balance
 
 La función lee la variable `pool_balance` y devuelve su valor para un determinado `token_type`. La variable pool_balance es presumiblemente un mapeo (arreglo asociativo) que asocia tipos de tokens con sus balances. La función read() es un método de la variable `pool_balance` que recupera el valor asociado con una clave dada (en este caso, el token_type).
 
@@ -106,7 +106,7 @@ La función lee la variable `pool_balance` y devuelve su valor para un determina
 
 ---
 
-### Verificación Starkscan
+## Verificación Starkscan
 
 Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `amm.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
 

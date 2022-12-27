@@ -82,7 +82,7 @@ Podemos revisar como se nos ha deployado con el datos pasados correctamente y co
 
 ---
 
-### Verificación Starkscan
+## Verificación Starkscan
 
 Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `Erc20.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
 

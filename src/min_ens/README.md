@@ -84,7 +84,7 @@ Y podemos verificar pasando en `get_name` la cuenta con la que hemos creado `Nad
 
 ---
 
-### Verificación Starkscan
+## Verificación Starkscan
 
 Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `ens.cairo` y vamos siguiendo los pasos.
 

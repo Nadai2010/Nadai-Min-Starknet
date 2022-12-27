@@ -54,8 +54,6 @@ Ahora nos quedaremos con el class hash del `Nft_market` para hacer el `deploy`. 
 protostar -p testnet declare ./build/nft_market.json --max-fee auto
 ```
 
-![Graph](/src/min_erc721/Im%C3%A1genes/declare.png)
-
 * [Hash Declare Nft Market](https://goerli.voyager.online/tx/0x7437144deaf80d76d168430fc72e6a69fa1277e3e4b1f1d7fa24a25864f5e56#overview)
 
 ---
@@ -95,7 +93,7 @@ Ahora ya podemos `list_token` en nuestro [Nft Market](https://testnet.starkscan.
 Podemos revisar como se nos ha deployado con el datos pasados correctamente y como hemos agregado nuestro nuevo NFT `NAFT`, pero aún no hemos comprado ninguno. Recordar que muchas funciones en los contratos necesitan aprovar primero.
 
 ---
-## Approve en ETH y Compra del NFT
+### Approve en ETH y Compra del NFT
 
  El comprador debe haber aprobado previamente el gasto del precio de la lista en [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract) para poder completar la venta. Esto se hace utilizando el método `allowance` del contrato ERC20 `IERC20`. Este método devuelve la cantidad de ETH que el comprador ha aprobado para que se gaste en nombre del comprador por un contrato específico. Asi que deberemos de ir al contrato de [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract) que estaba definido como constante en [nft_market.cairo](/src/min_nft_marketplace/nft_market.cairo#L28) y `aprobar` que el contrato [Nft Market](https://testnet.starkscan.co/contract/0x000ae210c507e00ea33a734c138f3368a53ccb837b517b737b072ced145cd72c) pueda gastar la cantidad necesaria en este caso `100000` para poder hacer la compra, para la guía probaremos con otra wallet como comprador.
 
@@ -111,7 +109,7 @@ Ahora ya podremos ir directamente al contrato del [Nft Market](https://testnet.s
 
 ---
 
-### Verificación Starkscan
+## Verificación Starkscan
 
 Como tarea extra podemos dejar verificado nuestro contrato en `Starkscan`, para ello debemos de tener instalada y guardado el contrato que acabamos de hacer el `Deploy`. Ejecutamos el siguiente comando, escogemos el `nft_market.cairo` y vamos siguiendo los pasos. (EN CASO ERROR EN LA RUTA SOLO HAY QUE AÑADIR LA PALABRA `lib`)
 

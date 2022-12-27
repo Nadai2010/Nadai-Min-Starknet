@@ -68,9 +68,26 @@ Los eventos `listing_created` y `listing_sold` también se emiten cada vez que s
 
 Próximamente archivo de prueba..
 
+* [NADAI GUIA NFT MARKET](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_nft_marketplace/README.md)
+
 ---
 
 ## MIN-AMM
 Min-amm es una implementación mínima de un creador de mercado automatizado en El Cairo. Los códigos fuente se obtuvieron y se modificaron mínimamente de los [Cairo docs](https://www.cairo-lang.org/docs/hello_starknet/amm.html), por lo que puede consultarlos en caso de que se confunda.
 
 También se creó un archivo de prueba [aquí](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/tests/test_amm.cairo).
+
+* [NADAI GUIA AMM](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_amm/README.md)
+
+## MIN-ICO
+Min-ico es una implementación mínima de una preventa o ICO en El Cairo. Una oferta inicial de monedas **ICO** es el equivalente a una IPO, una forma popular de recaudar fondos para productos y servicios generalmente relacionados con criptomonedas.
+
+El proceso de pensamiento para esta aplicación es que un usuario interesado en participar en la ICO debe registrarse primero con `0.001 ETH` llamando a la función `register` , luego, una vez que expire la duración de la ICO especificada usando `ICO_DURATION`, ahora puede llamar a la función externa `claim` para reclamar su parte de tokens ICO.
+
+PD: Todos los usuarios que participan en la ICO pagan la misma cantidad por el registro y reclaman la misma cantidad de tokens.
+
+**Nota: Recuerde llamar a aprobar(<dirección del contrato>, reg_amount) en el contrato ETH de StarkNet antes de llamar a la función `registrar`**
+
+* [NADAI GUIA ICO](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_ico/README.md)
+
+---
