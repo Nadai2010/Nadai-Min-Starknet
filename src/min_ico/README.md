@@ -75,9 +75,9 @@ protostar -p testnet deploy 0x0097186804ddd5fd8475c5ca8cfc0785a2edf1cde27596e8f6
 * [Hash Deploy](https://testnet.starkscan.co/tx/0x0251b25094c6ccbaad4e6336ea761c628d7f12e9c0464b63bd223fccab0ce893)
 * [Contract ICO](https://testnet.starkscan.co/contract/0x00479d02968a080dc08cb35d5fead32a0dc38792f8b1db14ddea4e87633dbf72)
 
-## Approve en ETH y Regsiter ICO
+## Approve en ETH y Register ICO
 
- Este código contiene una función [`register` en ico.cairo](/src/min_ico/ico.cairo#L81)que se encarga de registrar a una dirección en un ICO (Oferta Inicial de Monedas). La función verifica primero que el ICO no haya terminado, luego verifica que el usuario aún no esté registrado y luego verifica que el usuario haya aprobado previamente la dirección del contrato ICO para gastar la cantidad de registro de su saldo de ETH. Luego, la función transfiere la cantidad de registro desde la dirección del usuario al contrato ICO y agrega la dirección del usuario a la lista de direcciones registradas.
+ Este código contiene una función [`register` en ico.cairo](/src/min_ico/ico.cairo#L81) que se encarga de registrar a una dirección en un ICO (Oferta Inicial de Monedas). La función verifica primero que el ICO no haya terminado, luego verifica que el usuario aún no esté registrado y luego verifica que el usuario haya aprobado previamente la dirección del contrato ICO para gastar la cantidad de registro de su saldo de ETH. Luego, la función transfiere la cantidad de registro desde la dirección del usuario al contrato ICO y agrega la dirección del usuario a la lista de direcciones registradas.
 
 Primero el usuario debe aprobar la dirección del contrato [ICO](https://testnet.starkscan.co/contract/0x00479d02968a080dc08cb35d5fead32a0dc38792f8b1db14ddea4e87633dbf72) para gastar la cantidad de registro de su saldo de ETH, en este caso `0.001 ETH` que convertidos son `1000000000000000`. El usuario podrá hacerlo desde [ETH en Starknet](https://testnet.starkscan.co/contract/0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7#write-contract). Esto se hace utilizando el método `allowance` del contrato ERC20 `IERC20`. Este método devuelve la cantidad de ETH que el usuario ha aprobado para que se gaste en nombre del comprador por un contrato específico. 
 
