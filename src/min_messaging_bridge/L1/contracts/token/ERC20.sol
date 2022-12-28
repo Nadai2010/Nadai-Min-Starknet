@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract MinStarknet is ERC20{
+contract NadaiToken is ERC20{
 
     address public bridgeContract;
 
@@ -13,7 +13,7 @@ contract MinStarknet is ERC20{
         _;
     }
 
-    constructor(address bridge_contract) ERC20("MinStarknet", "MST"){
+    constructor(address bridge_contract) ERC20("Nadai Token", "WNAI"){
         bridgeContract = bridge_contract;
     }
 

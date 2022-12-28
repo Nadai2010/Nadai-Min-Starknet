@@ -104,3 +104,14 @@ El proceso de pensamiento para esta aplicación requiere que un usuario primero 
 * [NADAI GUIA STAKE](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_staking/README.md)
 
 ---
+
+## MIN-ERC20-PUENTE DE MENSAJERÍA
+La capacidad de crear puentes de mensajería personalizados en StarkNet para transferencias de datos y activos es una de las características principales que hace que StarkNet se destaque de otros paquetes acumulativos existentes.
+
+En este proyecto, vamos a crear un puente de mensajería ERC20 personalizado simple que puede ayudar a un usuario a transferir un token ERC20 entre StarkNet y Ethereum.
+
+El proceso de pensamiento para esta aplicación es que tenemos un token ERC20 implementado en StarkNet, que pretendemos conectar con Ethereum, para permitir que los usuarios envíen sus tokens entre capas. Primero tenemos que implementar un clon de nuestro token ERC20 en Ethereum, con un suministro inicial cero (esto se hace para garantizar que el suministro total en las diferentes capas, cuando se suma, permanezca constante). Luego implementamos nuestro token bridge en ambas capas, configurando el token ERC20 que queremos unir en particular.
+
+Cada vez que ocurre un puente desde L2 -> L1, los tokens puenteados se bloquean en el contrato puente L2, y la misma cantidad de tokens puenteados se acuñan en L1 para el usuario, y cada vez que ocurre un puente desde L1 -> L2, el los tokens puenteados se queman y la misma cantidad de tokens puenteados se libera o transfiere del contrato puente L2 al usuario, por lo que siempre se mantiene constante el suministro total.
+
+* [NADAI GUIA ERC20 BRIDGE](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_messaging_bridge/README.md)

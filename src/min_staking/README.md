@@ -50,7 +50,7 @@ Ahora nos quedaremos con el class hash del `Staking` para hacer el `deploy`. En 
 
 
 ```bash
-protostar -p testnet declare ./build/staking.json --max-fee auto
+protostar -p testnet declare ./build/token_bridge.json --max-fee auto
 ```
 
 ![Graph](/src/min_staking/im%C3%A1genes/declare.png)

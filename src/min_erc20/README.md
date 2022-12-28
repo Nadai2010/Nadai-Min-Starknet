@@ -65,7 +65,7 @@ protostar -p testnet declare ./build/erc20.json --max-fee auto
 Usaremos por comodidad para el `Min-Starknet` el contrato Universal para los deploy [UDC](https://testnet.starkscan.co/contract/0x041a78e741e5af2fec34b695679bc6891742439f7afb8484ecd7766661ad02bf#write-contract). En este caso pasaremos 6 argumentos añadir en `calldata_len = 6` [Name, Symbol, Decimals, **initialSupply**, Recipient]. El `initialSupply` deberá pasarse en uint256 por lo que podemos usar la herramienta [stark-util](https://www.stark-utils.xyz/converter) o directamente en este ejemplo para `100 = 100, 0`, por ello se pasan 6 argumentos. En mi caso os dejo la conversión completa de mis argumentos para el `deploy`.
 
 ```
-336641417577, 5128521, 18, 1000000, 0, 1795950254530259382270168937734171348535331377400385313842303804539016002736
+336641417577, 5128521, 18, 100, 0, 1795950254530259382270168937734171348535331377400385313842303804539016002736
 ```
 
 ![Graph](/src/min_erc20/im%C3%A1genes/deploy.png)
@@ -81,14 +81,6 @@ Podemos revisar como se nos ha deployado con el datos pasados correctamente y co
 ![Graph](/src/min_erc20/im%C3%A1genes/add.png)
 
 ---
-
-aprove nai
-
-https://testnet.starkscan.co/tx/0x4e9e6b98ca557d10e708ce096bb4cb57316a576d18b50c5dbe1d4bbaf5ce3a
-
-
-
-
 
 ## Verificación Starkscan
 
