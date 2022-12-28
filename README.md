@@ -115,3 +115,5 @@ El proceso de pensamiento para esta aplicación es que tenemos un token ERC20 im
 Cada vez que ocurre un puente desde L2 -> L1, los tokens puenteados se bloquean en el contrato puente L2, y la misma cantidad de tokens puenteados se acuñan en L1 para el usuario, y cada vez que ocurre un puente desde L1 -> L2, el los tokens puenteados se queman y la misma cantidad de tokens puenteados se libera o transfiere del contrato puente L2 al usuario, por lo que siempre se mantiene constante el suministro total.
 
 * [NADAI GUIA ERC20 BRIDGE](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_messaging_bridge/README.md)
+
+---

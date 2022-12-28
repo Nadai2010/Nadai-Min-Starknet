@@ -1,4 +1,4 @@
-## Guia MIN-STAKIMESSAGING BRIDGE
+## Guia MIN-MESSAGING BRIDGE
 
 Este proyecto utiliza Protostar como marco de desarrollo. Para comenzar con Protostar, siga las guías contenidas en los [documentos oficiales](https://docs.swmansion.com/protostar/docs/tutorials/installation).
 
@@ -55,7 +55,7 @@ Primero hablaremos de los pasos a seguir para poder hacer el desarrollo de los m
 
 ---
 
-## Compile y Declare Token_Bridge L2 y ERC20 (WNAI)
+## Compile y Declare Token_Bridge L2 y ERC20 (WNAI L2)
 
 Primero haremos los deploy del token [`WNAI L2`](/src/min_messaging_bridge/L2/token/ERC20.cairo) y luego [`Token Bridge L2`](/src/min_messaging_bridge/L2/token_bridge.cairo) como habiamos configurado en el orden, para ello primeros haremos la compilación de nuestros contratos y conseguimos los `Class Hash` con el siguiente comando.
 
@@ -78,7 +78,7 @@ protostar -p testnet declare ./build/bridge_erc20.json --max-fee auto
 
 * [Hash Declare ERC20 WNAI L2](https://testnet.starkscan.co/class/0x04dae654c7b6707667a178729b512d61494fe590ab4accc46923d6409b97e617)
 
-Y ahora el del [Token Bridge L2]
+Y ahora el del [Token Bridge L2](/src/min_messaging_bridge/L2/token_bridge.cairo)
 
 ```bash
 protostar -p testnet declare ./build/bridge.json --max-fee auto
@@ -93,7 +93,7 @@ protostar -p testnet declare ./build/bridge.json --max-fee auto
 ## Deploy WNAI L2 y Token Bridge L2 
 
 Para esta nueva guía podriamos haber usado el antiguo [NAI](https://testnet.starkscan.co/contract/0x0005cb4b24c874d2a7378a21286f3e70a9a4447567bf8f9b8de71b8a75f32abb#overview)
- o cualquier ERC20. Pero queremos hacerla desde 0 usando nuevos nombres pasados a felt con [Stark-utils](https://www.stark-utils.xyz/converter). En este caso tendremos que pasar 6 argumentos al constructor `Nombre, Simbolo, Decimales, Totalsupply en unit 256 (ejemplo 100 = 100, 0 puede usar [Stark-utils](https://www.stark-utils.xyz/converter), y el recipient`, en nuestro caso os dejo la conversión usada.
+ o cualquier ERC20. Pero queremos hacerla desde 0 usando nuevos nombres pasados a felt con [Stark-utils](https://www.stark-utils.xyz/converter). En este caso tendremos que pasar 6 argumentos al constructor `Nombre, Simbolo, Decimales, Totalsupply en unit 256 (ejemplo 100 = 100, 0 puede usar` [Stark-utils](https://www.stark-utils.xyz/converter), `y el recipient`, en nuestro caso os dejo la conversión usada.
 
 * Nadai Token = 94756135172363843420251502
 * WNAI = 1464746313
@@ -157,8 +157,6 @@ Ahora ya tenemos último starknetcore oficial (`0xde29d060D45901Fb19ED6C6e959EB2
 * [Hash Deploy Token Bridge L1](https://goerli.etherscan.io/tx/0x7eff000307a9bacc0424b289af9cae926c55365227b1da036e2acb65f30adbb4)
 * [Contract Token Bridge L1](https://goerli.etherscan.io/address/0x26f7ceb56d7d024d60c2040b3bb961fa266989a5#code)
 
-Ahora que 
-
 --- 
 
 ### Verify con Remix
@@ -174,6 +172,12 @@ Ahora necesitamos una API Key de [Etherscan](https://etherscan.io/myapikey), ent
 ![Graph](/src/min_messaging_bridge/im%C3%A1genes/verify3.png)
 
 **Una vez dado a `verify` ya debería poder escribir en él, recordar este paso ya que lo volveremos a realizar para verificar el [Contract Address WNAI L1](https://goerli.etherscan.io/address/0x7b0d0a2c75f8db677269a86ca4ee31420371baf8#code), las fotos aportadas son de los 2 contratos**
+
+---
+
+**Puede revisar guía completa VERIFICAIÓN [aquí](https://github.com/Nadai2010/Nadai-Chainlink-dNFT#deploy-con-remix)** 
+
+---
 
 Ahora ya podremos pasar a deployar nuestro [ERC20 WNAI L1](/src/min_messaging_bridge/L1/contracts/token/ERC20.sol) en Remix, pasaremos como argumentos la dirección del [Contract Token Bridge L1](https://goerli.etherscan.io/address/0x26f7ceb56d7d024d60c2040b3bb961fa266989a5#code) que acabmos de crear.
 
@@ -225,6 +229,8 @@ Aquí podemos comprobar como nuestro balance ha disminuido a `80` pero debemos d
 
 ![Graph](/src/min_messaging_bridge/im%C3%A1genes/balance.png)
 
+![Graph](/src/min_messaging_bridge/im%C3%A1genes/deposit.png)
+
 ![Graph](/src/min_messaging_bridge/im%C3%A1genes/balancel1.png)
 
 ![Graph](/src/min_messaging_bridge/im%C3%A1genes/mensajes.png)
@@ -232,7 +238,7 @@ Aquí podemos comprobar como nuestro balance ha disminuido a `80` pero debemos d
 * [Hash 10 deposit_to_l1](https://goerli.etherscan.io/tx/0x4a8f36c89d3d78856df1d9e8e0f0bae35836fbe67c96e5e16eaefdaf741a0292)
 * [Hash 10 deposit_to_l1](https://goerli.etherscan.io/tx/0x085702550f2ef786b53b11d16eb31afde61b296c3ae396555f3c81563fdb44e1)
 
-Ahora podemos revisar en [Contract Address WNAI L1](https://goerli.etherscan.io/address/0x7b0d0a2c75f8db677269a86ca4ee31420371baf8#readContract#F7) el `TotalSupply` debe de ser de `20 WNAI L1`
+Ahora podemos revisar en [Contract Address WNAI L1](https://goerli.etherscan.io/address/0x7b0d0a2c75f8db677269a86ca4ee31420371baf8#readContract#F7) el `TotalSupply` como pasó de `0` a `20 WNAI L1`
 
 ![Graph](/src/min_messaging_bridge/im%C3%A1genes/wnail1.png)
 
