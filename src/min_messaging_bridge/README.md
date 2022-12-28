@@ -175,7 +175,7 @@ Ahora necesitamos una API Key de [Etherscan](https://etherscan.io/myapikey), ent
 
 ---
 
-**Puede revisar guía completa VERIFICAIÓN [aquí](https://github.com/Nadai2010/Nadai-Chainlink-dNFT#deploy-con-remix)** 
+**Puede revisar guía completa de VERIFICACIÓN en REMIX [aquí](https://github.com/Nadai2010/Nadai-Chainlink-dNFT#deploy-con-remix)** 
 
 ---
 
