@@ -117,3 +117,74 @@ Cada vez que ocurre un puente desde L2 -> L1, los tokens puenteados se bloquean 
 * [NADAI GUIA ERC20 BRIDGE](https://github.com/Nadai2010/Nadai-Min-Starknet/blob/master/src/min_messaging_bridge/README.md)
 
 ---
+
+## MIN-UPGRADABILITY
+Con Regenesis a la mano, es necesario comprender cómo funcionan los contratos actualizables para poder migrar con éxito los contratos existentes a Cairo v1.0. En esta sección, aprenderemos cómo crear contratos actualizables mediante la codificación de un token ERC20 actualizable.
+
+En términos simples, un contrato actualizable es aquel que le permite cambiar el código/lógica subyacente de su contrato inteligente, sin alterar necesariamente el punto de entrada (dirección del contrato) de su dApp. Esto se hace separando sus contratos en un Proxy y una implementación. El Proxy sirve como punto de entrada y también contiene el almacenamiento del contrato, mientras que la Implementación contiene el código/lógica de su dApp. Para una inmersión más profunda, consulte este artículo de David Baretto [aquí](https://medium.com/starknet-edu/creating-upgradable-smart-contracts-on-starknet-12b7d9bd60c7).
+
+Gracias al equipo de Openzeppelin, ya tenemos una buena plantilla a seguir. Primero tendríamos que copiar el [contrato de proxy](https://github.com/OpenZeppelin/cairo-contracts/blob/main/src/openzeppelin/upgrades/presets/Proxy.cairo) en nuestro repositorio. Este contrato de proxy contiene algunas funciones importantes que debemos comprender:
+
+* El `constructor` que toma 4 parámetros: deployment_hash que es el hash de clase de nuestro contrato de `implementation_hash`, `selector` que es el nombre del selector de nuestra función de inicializador (1295919550572838631247819983596733806859788957403169325509326258146877103642), `calldata_len` que es la longitud de nuestro calldata del contrato de (construcción y argumento) y `calldata` que son los argumentos del constructor del contrato de implementación. El constructor establece el hash de implementación e inicializa el contrato de implementación.
+
+* La función `__default__` que es responsable de redirigir cualquier llamada de función cuyo selector no se pueda encontrar en el contrato del proxy a la implementación.
+
+* La función `__l1_default__` que es responsable de redirigir cualquier función realizada a un @l1_handler cuyo selector no se encuentra en el contrato del proxy a la implementación.
+
+Finalmente, creamos nuestros contratos de implementación agregando funciones como `upgrade` para actualizar el hash de implementación, `setAdmin` para configurar el administrador de proxy, `getImplementationHash` para obtener el hash de clase de contrato de implementación y `getAdmin` para obtener el administrador de proxy actual.
+
+Tenga en cuenta que el contrato de implementación nunca debe:
+
+1. Ser desplegado como un contrato regular. En su lugar, se debe declarar el contrato de implementación (lo que crea una clase declarada que contiene su hash y abi).
+2. Establezca su estado inicial con un constructor tradicional (decorado con @constructor). En su lugar, utilice un método de inicialización que invoque al constructor Proxy.
+
+* [NADAI GUIA PROXY V2](https://github.com/Nadai2010/Nadai-NaiProxyV2-Starknet-ERC20)
+
+---
+
+# PLAYGROUND OFICIAL
+¿Busca una versión ya implementada de estos contratos? échales un vistazo en StarkScan (Goerli2). 
+
+**PD: si alguna vez se encuentra con un error de asignación, probablemente necesite llamar a la función de aprobación en el contrato ETH de antemano.**
+
+# MIN-ENS
+* `ENS` - 0x0340be76bc3bb090a3a339a8ccf6381e7d6620e80e047ddd814268c286dc1e66
+# MIN-ERC20
+* `ERC20` - 0x064b2aee30d3693237d0e4f1792b0bde2d80f799d2f95ee7cc2bb339b8fce23e
+# MIN-ERC721
+* `ERC721` - 0x02f5222bdb8e68b59736e1490c5ec36ab32f609e4e7058a4042841a51a6cec94
+# MIN-NFT-MARKETPLACE
+* `ERC721` - 0x02f5222bdb8e68b59736e1490c5ec36ab32f609e4e7058a4042841a51a6cec94
+* `NFTMarket` - 0x05b3f40d5cdac77a4e922d8765a5a6ae96e64dc2a4796187d9a25166d0da2235
+# MIN-AMM
+* `AMM` - 0x0219cc693096e2d7df6d6145758fe1b63218725054c61e1fe98cf862cb4c2eb9
+# MIN-ICO
+* `ERC20` - 0x064b2aee30d3693237d0e4f1792b0bde2d80f799d2f95ee7cc2bb339b8fce23e
+* `ICO` - 0x028afec7907fa30e16aa62e89658d2a416e00f7917a57502d5dc0e43755df103
+# MIN-STAKING
+* `ERC20` - 0x064b2aee30d3693237d0e4f1792b0bde2d80f799d2f95ee7cc2bb339b8fce23e
+* `STAKING` - 0x06aaa18df6c7a39373d0e153354eda4e1471fab4616837a9ae3295b890abd03a
+# MIN-MESSAGING-BRIDGE
+* `ERC20` - 0x064b2aee30d3693237d0e4f1792b0bde2d80f799d2f95ee7cc2bb339b8fce23e
+* `L2 BRIDGE ADDRESS` - 0x01c22dddbdbb040268b0a2bb79d62602a57726b2532ee015980f033eb10d8472
+* `L1 BRIDGE ADDRESS` - 0xD1A3D5b3Aa75f0884001b2F92d4c7E6050B2eF97
+# MIN-UPGRADABILITY
+* `Proxy class hash` - 0x601407cf04ab1fbab155f913db64891dc749f4343bc9e535bd012234a46dc61
+* `Implementation_v0 class hash` - 0x707e746b94ec595a094ff53dfacb0b6ed8117ba7941844766dd34ab7872107a
+* `Implementation_v1 class hash` - 0x1b439f0e941915a2a45bed6d5affed2966010bb5e9b682bc4137178af2a9667
+* `Deployed contract` - 0x00701816faf15bf9a97132dbc84d594bf4dd12cea878a8e46254a504ee2187e8
+
+**DENTRO DE CADA GUÍA NADAI PODRA ENCONTRAR LOS DEPLOY Y CONTRATOS**
+
+---
+
+# DIRECTRICES DE CONTRIBUCIÓN
+
+Para garantizar que este repositorio se mantenga lo más simple y minimalista posible para no confundir a los principiantes, no se aceptarán contribuciones en forma de agregar nuevos protocolos, pero si cree que vale la pena agregarlo a la lista, envíeme un DM en Twitter [Darlington Nnam](https://twitter.com/0xdarlington). Mientras tanto, podría contribuir en forma de modificaciones a los proyectos existentes enumerados. Un buen lugar para comenzar es revisar los problemas abiertos. Asegúrese de prestar atención a lo siguiente en el curso de la contribución:
+
+1. Mantenga la implementación lo más simple y minimalista posible.
+2. Comente los códigos en detalles para permitir que otros entiendan lo que hacen sus códigos. Natspec es la opción preferida.
+3. Mantenga sus códigos simples y limpios.
+4. Al abrir PR, proporcione una descripción detallada de lo que está tratando de corregir o agregar. Construyamos un excelente REPO de aprendizaje para los frenéticos que buscan comenzar con Cairo.😉
+
+**Si este repositorio fue útil, ¡dale una ESTRELLA!**
